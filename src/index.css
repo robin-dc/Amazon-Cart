@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  *{
+    font-family: "Poppins", sans-serif;
+  }
+  body{
+    @apply bg-[#ffc06d]
+  }
+  .products{
+    background-image: url('/hero.jpg');
+    background-repeat: no-repeat;
+    min-height: 80vh;
+    background-size: contain;
+    background-position: top;
+  }
+  .cart-items::after{
+    color:white;
+    font-size: 0.7rem;
+    content:attr(data-cart-count);
+    position: absolute;
+    background-color: rgb(180, 0, 0);
+    top:-2px;
+    right: -7px;
+    width: 1.1rem;
+    height: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50vw;
+    font-weight: bold;
+  }
+  @media (max-width:1000px){
+    .cart-items::after{
+      font-size: 0.6rem;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
