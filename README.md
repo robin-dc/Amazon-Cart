@@ -7,14 +7,15 @@
 
 <br>
 
-<h2 style="text-align: center;">Home Page</h2>
+## Home Page
 <a href="https://amazon-shopcart.netlify.app/"><img src='https://github.com/robin-dc/Amazon-Cart/blob/main/public/amazoncart_preview1.png'></a>
 
 <br>
 
-<h2 style="text-align: center;">Shopping Cart</h2>
+## Shopping Cart
 <a href="https://amazon-shopcart.netlify.app/"><img src='https://github.com/robin-dc/Amazon-Cart/blob/main/public/amazoncart_preview2.png'></a>
 
+<br>
 <br>
 
 ## 🚀 To clone this project using CLI:
