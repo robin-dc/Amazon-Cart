@@ -7,17 +7,12 @@
 
 <br>
 
-<p align="center">
-  <h2>Home Page</h2>
-</p>
+<h2 style="text-align: center;">Home Page</h2>
 <a href="https://amazon-shopcart.netlify.app/"><img src='https://github.com/robin-dc/Amazon-Cart/blob/main/public/amazoncart_preview1.png'></a>
 
 <br>
 
-<p align="center">
-  <h2>Shopping Cart</h2>
-</p>
-
+<h2 style="text-align: center;">Shopping Cart</h2>
 <a href="https://amazon-shopcart.netlify.app/"><img src='https://github.com/robin-dc/Amazon-Cart/blob/main/public/amazoncart_preview2.png'></a>
 
 <br>
