@@ -28,8 +28,8 @@ function Cart() {
         <div className="min-h-screen bg-white relative">
             <header className="sticky top-[-1px] z-[50]">
                 <nav className="flex justify-between px-[0.8rem] lg:px-[3rem] py-[1.4rem] bg-[#0f1111]">
-                    <Link to="/"><img src="/logo.png" alt="" className="w-[5rem] lg:w-[7rem]"/></Link>
-                    <Link className="text-white flex text-[0.8rem] lg:text-[1rem] items-center gap-[3px] lg:gap-[5px] justify-center" to="/">
+                    <Link to="/products"><img src="/logo.png" alt="" className="w-[5rem] lg:w-[7rem]"/></Link>
+                    <Link className="text-white flex text-[0.8rem] lg:text-[1rem] items-center gap-[3px] lg:gap-[5px] justify-center" to="/products">
                         <span className="text-[1.2rem] lg:text-[1.4rem] text-[#febd69]"><RiApps2Line/></span>
                         <span>Products</span>
                     </Link>
@@ -38,7 +38,7 @@ function Cart() {
             <div className="bg-white p-[1rem] lg:p-[2rem] pb-[8rem]">
                 <img src="/banner.jpg" alt="" className="rounded-lg lg:rounded-2xl object-cover w-full"/>
                 {cartState.length > 0 ? <div className="p-[0.5rem] lg:p-[1.5rem] mt-[1.5rem]">
-                    <h2 className="text-[1.5rem] lg:text-[1.8rem] font-bold text-gray-400">Shopping Cart</h2>
+                    <h2 className="text-[1.5rem] lg:text-[1.8rem] font-semibold text-gray-400">Shopping Cart</h2>
                     <table className="w-full mt-[1rem]">
                         <thead className="w-full">
                             <tr className="grid grid-cols-4 text-left text-[0.9rem] lg:text-[1rem] text-gray-400">

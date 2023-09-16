@@ -26,7 +26,6 @@ const cartSlice = createSlice({
                     cart.push({...action.payload, count: 1, totalprice: action.payload.price})
                     state.value.total = (Number(state.value.total) + action.payload.price).toFixed(2)
                 }
-
         },
         increment: (state, action) => {
             state.value.cart = state.value.cart.map(product => {

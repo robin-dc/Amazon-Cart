@@ -4,6 +4,7 @@ import Products from "./components/Products/Products"
 import Cart from "./components/Cart/Cart"
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
+import ProductDetails from "./components/ProductDetails/ProductDetails"
 
 
 function App() {
@@ -23,7 +24,16 @@ function App() {
           </div>
         </>
       )}/>
+      <Route path="/products" element={(
+        <>
+          <Navbar/>
+          <div className="container pb-[3rem]">
+              <Products/>
+          </div>
+        </>
+      )}/>
       <Route path="/cart" element={<Cart/>}/>
+      <Route path="/products/:id" element={<ProductDetails/>}/>
     </Routes>
   )
 }
