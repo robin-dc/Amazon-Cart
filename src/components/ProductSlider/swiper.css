@@ -37,6 +37,6 @@
 @media (max-width: 768px) {
     .swiper-button-prev:after,
     .swiper-button-next:after{
-        font-size: 1rem !important; /* Adjust the font size as needed */
+        font-size: 1.3rem !important; /* Adjust the font size as needed */
     }
 }

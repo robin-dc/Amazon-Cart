@@ -20,19 +20,20 @@ const ProductSlider = ({products, category}) => {
     useEffect(() => {
         function handleResize() {
             if (window.innerWidth <= 768) {
-            setIsMobile(true);
+                setIsMobile(true);
             } else {
-            setIsMobile(false);
+                setIsMobile(false);
             }
         }
-
+        handleResize()
         window.addEventListener('resize', handleResize);
 
         return () => {
             window.removeEventListener('resize', handleResize);
             };
-    }, []);
+    }, [isMobile]);
 
+    const slideToShow = isMobile ? 3 : 5
   return (
 
     <div className='relative py-[2rem] bg-white drop-shadow-2xl container swiper'>
@@ -46,7 +47,7 @@ const ProductSlider = ({products, category}) => {
             // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={0}
-        slidesPerView={ isMobile ? 3 : 5}
+        slidesPerView={slideToShow}
         navigation={{
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next',
