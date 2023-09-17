@@ -26,11 +26,13 @@ function Navbar() {
     }, [searchInput])
 
     return (
-        <header className="sticky top-[-1px] z-[50]">
+        <header className="sticky top-[-1px] lg:top-[0px] z-[50]">
             <nav className="flex justify-between px-[1.2rem] items-center lg:px-[3rem] py-[1.4rem] bg-[#0f1111]">
                 <a href="/"><img src="/logo.png" alt="" className="w-[5rem] lg:w-[7rem]"/></a>
-                <div className="flex rounded-md justify-between overflow-hidden bg-white w-[11rem] lg:w-[30rem]">
-                    <input type="text" placeholder="Search a product." className="px-[0.7rem] text-[0.8rem] lg:text-[1rem] py-[3px] lg:px-[1rem] pr-[5rem] outline-none" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+                <div className="flex rounded-md justify-between overflow-hidden bg-white w-[9rem] lg:w-[30rem]">
+                    <input type="text" placeholder="Search a product." className="px-[0.7rem] text-[0.8rem] lg:text-[1rem] py-[3px] lg:px-[1rem] pr-[5rem] outline-none" value={searchInput} onChange={(e) =>
+                    setSearchInput(e.target.value)
+                    }/>
                     <button className="hidden lg:flex bg-[#febd69] text-[1.6rem] px-[0.7rem] py-[5px] active:scale-[0.95]" onClick={() => dispatch(search(searchInput))}><AiOutlineSearch /></button>
                 </div>
                 <div className='flex gap-[0.8rem] items-center'>

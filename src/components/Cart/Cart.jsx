@@ -4,13 +4,14 @@ import CartItem from "./CartItem";
 import { BsFillCartXFill } from 'react-icons/bs'
 import { RiApps2Line } from 'react-icons/ri'
 import { AiOutlineCheckCircle } from 'react-icons/ai'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { checkout } from "../../features/cart/cartSlice";
 
 
 function Cart() {
     const cartState = useSelector(state => state.cart.value.cart)
     const cartTotal = useSelector(state => state.cart.value.total)
+    const [isMobile, setIsMobile] = useState(false)
     const dispatch = useDispatch()
 
     const [isCheckout, setIsCheckout] = useState(false)
@@ -24,6 +25,23 @@ function Cart() {
 
         return () => clearTimeout(time)
     }
+
+    useEffect(() => {
+        function handleResize() {
+          if (window.innerWidth <= 768) {
+            setIsMobile(true);
+          } else {
+            setIsMobile(false);
+          }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+          };
+        }, []);
+
     return (
         <div className="min-h-screen bg-white relative">
             <header className="sticky top-[-1px] z-[50]">
@@ -36,7 +54,7 @@ function Cart() {
                 </nav>
             </header>
             <div className="bg-white p-[1rem] lg:p-[2rem] pb-[8rem]">
-                <img src="/banner.jpg" alt="" className="rounded-lg lg:rounded-2xl object-cover w-full"/>
+                    <img src={`${isMobile ? "/mobile_header2.jpg" : "/banner.jpg"}`} alt="" className="rounded-lg lg:rounded-2xl object-cover w-full h-[7rem] lg:h-fit"/>
                 {cartState.length > 0 ? <div className="p-[0.5rem] lg:p-[1.5rem] mt-[1.5rem]">
                     <h2 className="text-[1.5rem] lg:text-[1.8rem] font-semibold text-gray-400">Shopping Cart</h2>
                     <table className="w-full mt-[1rem]">

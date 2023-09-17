@@ -6,16 +6,22 @@ import { addItem, remove } from '../../features/cart/cartSlice';
 import { useParams, Link } from 'react-router-dom';
 import { TbTruckDelivery } from 'react-icons/tb'
 import { LuRotate3D } from 'react-icons/lu'
+import ProductSlider from '../ProductSlider/ProductSlider';
+import { fetchData } from '../../features/products/productsSlice';
 
 const ProductDetails = () => {
+    const { id } = useParams()
     const dispatch = useDispatch()
     const state = useSelector(state => state.productDetails)
-    const { id } = useParams()
+    const products = useSelector(state => state.products)
+    const filteredProducts = products.value.filter(product => product.id !== Number(id))
+
     const cart = useSelector(state => state.cart.value)
     const cartState = cart.cart.length
     const isFirstMount = useRef(true);
 
     useEffect(() => {
+        dispatch(fetchData())
 
         if (isFirstMount.current) {
           window.scrollTo(0, 0);
@@ -98,6 +104,12 @@ const ProductDetails = () => {
                     </div>
 
                 </div>
+            </div>
+
+            <div className='py-[2rem] px-[1rem] lg:px-0'>
+                {!products.loading && products.value && products.value.length > 0 && (
+                    <ProductSlider products={filteredProducts} category={"Recommended Products from Philippines"}/>
+                )}
             </div>
         </div>
 

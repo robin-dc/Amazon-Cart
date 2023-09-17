@@ -19,7 +19,7 @@ function App() {
       <Route path="/" element={(
         <>
           <Navbar/>
-          <div className="container pb-[3rem]">
+          <div className="bg-[#F5F5F5] pb-[3rem]">
               <Products/>
           </div>
         </>
@@ -27,7 +27,7 @@ function App() {
       <Route path="/products" element={(
         <>
           <Navbar/>
-          <div className="container pb-[3rem]">
+          <div className="bg-[#F5F5F5] pb-[3rem]">
               <Products/>
           </div>
         </>

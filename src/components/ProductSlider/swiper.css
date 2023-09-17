@@ -1,0 +1,42 @@
+/* Change font size for both previous and next buttons */
+.swiper-button-prev:after,
+.swiper-button-next:after{
+    font-size: 1.8rem !important;
+    font-weight: bold !important;
+    transition: 0.3s !important;
+}
+.swiper-button-prev,
+.swiper-button-next{
+    display: none;
+}
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next{
+    display: flex;
+}
+.swiper-scrollbar{
+    opacity: 1;
+    height: 6px !important;
+    border-radius: 4px;
+    position: absolute !important;
+    bottom: 0.8rem !important;
+    transition: all 0.3s ease !important;
+    display: none;
+}
+
+.swiper-scrollbar-drag {
+    background-color: gray !important;
+    opacity: 1;
+    border-radius: 4px;
+    width: 50%;
+    height: 6px !important;
+}
+.swiper:hover .swiper-scrollbar{
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .swiper-button-prev:after,
+    .swiper-button-next:after{
+        font-size: 1rem !important; /* Adjust the font size as needed */
+    }
+}

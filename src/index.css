@@ -6,15 +6,8 @@
   *{
     font-family: "Poppins", sans-serif;
   }
-  body{
-    @apply bg-[#ffc06d]
-  }
-  .products{
-    background-image: url('/hero.jpg');
-    background-repeat: no-repeat;
-    min-height: 80vh;
-    background-size: contain;
-    background-position: top;
+  body::-webkit-scrollbar{
+    display: none;
   }
   .cart-items::after{
     color:white;

@@ -1,0 +1,15 @@
+/* Change font size for both previous and next buttons */
+.swiper-button-prev:after,
+.swiper-button-next:after{
+    font-size: 2.5rem !important; /* Adjust the font size as needed */
+}
+.swiper-prev,
+.swiper-next{
+    display: flex !important;
+}
+@media (max-width: 768px) {
+    .swiper-button-prev:after,
+    .swiper-button-next:after{
+        font-size: 1.4rem !important; /* Adjust the font size as needed */
+    }
+}
