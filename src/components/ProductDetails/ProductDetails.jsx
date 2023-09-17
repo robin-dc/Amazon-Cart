@@ -48,7 +48,7 @@ const ProductDetails = () => {
     return (
         <div className='min-h-screen bg-[#F5F5F5] '>
             <header className="sticky top-[-1px] z-[50]">
-                <nav className="flex justify-between px-[0.8rem] lg:px-[3rem] py-[1.4rem] bg-[#0f1111]">
+                <nav className="flex justify-between px-[1.2rem] items-center lg:px-[3rem] py-[1.4rem] bg-[#0f1111]">
                     <Link to="/"><img src="/logo.png" alt="" className="w-[5rem] lg:w-[7rem]"/></Link>
                     <div className='flex gap-[0.8rem] items-center'>
                         <Link className='text-white text-[1.4rem] lg:text-[1.7rem] active:scale-[0.95] relative cart-items'
