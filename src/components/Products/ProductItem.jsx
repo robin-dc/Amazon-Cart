@@ -14,7 +14,9 @@ function ProductItem({title, id, image, category, price, description, rating: {r
     }
     return (
         <div className="p-[1rem] pt-[1.5rem] lg:p-[2rem] lg:pt-[2rem] lg:pb-[1rem] bg-white drop-shadow-2xl relative">
-            <img src={image} alt="" className="w-[6rem] lg:w-[10rem] mx-auto h-[7rem] lg:h-[12rem]"/>
+            <Link to={`/products/${id}`} onClick={() => dispatch(setProduct({title, id, image, category, price, description, rating: {rate, count}}))}>
+                <img src={image} alt="" className="w-[6rem] lg:w-[10rem] mx-auto h-[7rem] lg:h-[12rem]"/>
+            </Link>
             <h3 className="text-[0.8rem] lg:text-[1rem] font-semibold mt-[1rem] truncate">{title}</h3>
             <p className="truncate text-[0.7rem] lg:text-[0.8rem]">{description}</p>
             <p className="bg-[#0f1111] text-[0.7rem] lg:text-[1rem] text-white absolute top-[1rem] right-[1rem] rounded-full py-[4px] px-[0.6rem] lg:px-[1rem]">${price}</p>

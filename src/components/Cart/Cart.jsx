@@ -34,13 +34,13 @@ function Cart() {
             setIsMobile(false);
           }
         }
-
+        handleResize()
         window.addEventListener('resize', handleResize);
 
         return () => {
             window.removeEventListener('resize', handleResize);
           };
-        }, []);
+        }, [isMobile]);
 
     return (
         <div className="min-h-screen bg-white relative">

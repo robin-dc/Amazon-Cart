@@ -61,7 +61,10 @@ const ProductSlider = ({products, category}) => {
         >
             {products.map(({title, id, image, category, price, description, rating: {rate, count}}) => (
                 <SwiperSlide  className='px-[1rem] cursor-pointer' key={id}>
-                    <Link to={`/products/${id}`} onClick={() => dispatch(setProduct({title, id, image, category, price, description, rating: {rate, count}}))}>
+                    <Link to={`/products/${id}`} onClick={() => {
+                        dispatch(setProduct({title, id, image, category, price, description, rating: {rate, count}}))
+                        window.scrollTo(0, 0)
+                    }}>
                         <img src={image} alt="" className="w-fit lg:w-fit mx-auto h-[7rem] lg:h-[12rem] mb-[0.5rem]"/>
 
                         <div className='flex gap-[0.5rem] lg:gap-[0.7rem] items-center py-[0.5rem]'>
