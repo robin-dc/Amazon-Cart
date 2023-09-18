@@ -20,6 +20,7 @@ function Products() {
 
     useEffect(() => {
         dispatch(fetchData())
+        window.scrollTo(0, 0);
     }, [])
 
     const categories = [...new Set(state.value.map(product => product.category))]
@@ -55,16 +56,19 @@ function Products() {
             className='absolute top-0 right-0 w-full z-0'
             >
                 <SwiperSlide  className='w-screen'>
-                    <img src="/header4.jpg" alt="" className='w-screen'/>
+                    <img src="/hero.jpg" alt="header" className='w-screen'/>
+                </SwiperSlide>
+                <SwiperSlide  className='w-screen'>
+                    <img src="/header4.jpg" alt="header" className='w-screen'/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/header1.jpg" alt="" className='w-screen'/>
+                    <img src="/header1.jpg" alt="header" className='w-screen'/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/header2.jpg" alt="" className='w-screen'/>
+                    <img src="/header2.jpg" alt="header" className='w-screen'/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/header3.jpg" alt="" className='w-screen'/>
+                    <img src="/header3.jpg" alt="header" className='w-screen'/>
                 </SwiperSlide>
 
                 <div className="relative">
@@ -81,7 +85,7 @@ function Products() {
             </div>
 
             <div className="pt-[7rem] lg:pt-[15rem] px-[0.5rem] gap-[0.5rem] grid grid-cols-2 lg:px-0 lg:grid-cols-4 lg:gap-[1rem] container">
-                {state.loading ? <div className="flex bg-[#00000062] items-center justify-center w-full fixed top-0 bottom-0 left-0 right-0 pointer-events-none"><img src="/loader.svg" alt="" className="w-[5rem]" /></div> : null}
+                {state.loading ? <div className="flex bg-[#00000062] items-center justify-center w-full fixed top-0 bottom-0 left-0 right-0 pointer-events-none"><img src="/loader.svg" alt="loader" className="w-[5rem]" /></div> : null}
                 {!state.loading && state.value && state.value.length > 0 ? state.value.map(product => <ProductItem key={product.id} {...product}/>) : !state.loading && <p className="text-center text-[1.5rem] fixed left-0 right-0 text-[#0f1111]">No Match Found</p>}
             </div>
 

@@ -18,16 +18,10 @@ const ProductDetails = () => {
 
     const cart = useSelector(state => state.cart.value)
     const cartState = cart.cart.length
-    const isFirstMount = useRef(true);
 
     useEffect(() => {
         dispatch(fetchData())
-
-        if (isFirstMount.current) {
-          window.scrollTo(0, 0);
-
-          isFirstMount.current = false;
-        }
+        window.scrollTo(0, 0);
       }, []);
 
     const {title, image, category, price, description, rating: {rate, count}} = state.value
@@ -46,7 +40,7 @@ const ProductDetails = () => {
     const buttonText = isInCart ? "Remove from Cart" : "Add to Cart"
 
     return (
-        <div className='min-h-screen bg-[#F5F5F5] '>
+        <div className='min-h-screen bg-[#F5F5F5] pb-[6rem]'>
             <header className="sticky top-[-1px] z-[50]">
                 <nav className="flex justify-between px-[1.2rem] items-center lg:px-[3rem] py-[1.4rem] bg-[#0f1111]">
                     <Link to="/"><img src="/logo.png" alt="" className="w-[5rem] lg:w-[7rem]"/></Link>
