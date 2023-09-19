@@ -10,7 +10,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import './swiper.css';
 import { useDispatch } from 'react-redux';
-import { setProduct } from '../../features/products/productDetailSlice';
 import { Link } from 'react-router-dom';
 
 const ProductSlider = ({products, category}) => {
@@ -62,7 +61,7 @@ const ProductSlider = ({products, category}) => {
             {products.map(({title, id, image, category, price, description, rating: {rate, count}}) => (
                 <SwiperSlide  className='px-[1rem] cursor-pointer' key={id}>
                     <Link to={`/products/${id}`} onClick={() => {
-                        dispatch(setProduct({title, id, image, category, price, description, rating: {rate, count}}))
+                        localStorage.setItem('activeProduct', JSON.stringify({title, id, image, category, price, description, rating: {rate, count}}))
                         window.scrollTo(0, 0)
                     }}>
                         <img src={image} alt="" className="w-fit lg:w-fit mx-auto h-[7rem] lg:h-[12rem] mb-[0.5rem]"/>

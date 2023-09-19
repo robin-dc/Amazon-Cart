@@ -1,19 +1,25 @@
 import { RiArrowLeftSLine } from 'react-icons/ri'
 import { RiArrowRightSLine } from 'react-icons/ri'
 import { FaTimes } from 'react-icons/fa'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment, remove } from '../../features/cart/cartSlice';
 import { Link } from 'react-router-dom';
-import { setProduct } from '../../features/products/productDetailSlice';
+
 
 function CartItem({id, title, price, image, description, count, totalprice}) {
     const dispatch = useDispatch()
+    const products = useSelector(state => state.products)
+
+    function setItem(id) {
+        const state = products?.value.find(product => product.id == Number(id))
+        localStorage.setItem('activeProduct', JSON.stringify(state))
+    }
 
     return (
         <tr className="grid grid-cols-4 text-left mt-[2rem] lg:px-[1.5rem] gap-[0.5rem] lg:gap-[1rem]">
             <td className="col-span-1 lg:col-span-2">
                 <Link to={`/cart/${id}`} className='flex flex-col lg:flex-row items-center gap-[0.5rem] lg:gap-[3rem]'
-                onClick={() => dispatch(setProduct({title, id, image, category, price, description, rating: {rate, count}}))}
+                onClick={() => setItem(id)}
                 >
                     <img src={image} alt="" className="h-[4rem] w-[3rem] lg:w-[5rem] lg:h-[6rem] "/>
                     <div>

@@ -16,19 +16,20 @@ const ProductDetails = () => {
 
 
     const dispatch = useDispatch()
-    const state = useSelector(state => state.productDetails)
-    const products = useSelector(state => state.products)
-    const filteredProducts = products.value.filter(product => product.id !== Number(id))
 
+    const activeProduct = JSON.parse(localStorage.getItem('activeProduct'));
+    const products = useSelector(state => state.products)
+
+    const filteredProducts = products.value.filter(product => product.id !== Number(id))
     const cart = useSelector(state => state.cart.value)
     const cartState = cart.cart.length
 
     useEffect(() => {
         dispatch(fetchData())
         window.scrollTo(0, 0);
-      }, []);
+    }, [id]);
 
-    const {title, image, category, price, description, rating: {rate, count}} = state.value
+    const {title, image, category, price, description, rating: {rate, count}} = activeProduct
 
     const stars = []
     for(let i = 0; i < 5 ; i++) {
