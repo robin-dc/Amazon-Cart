@@ -60,7 +60,7 @@ const Footer = () => {
                     <BsFillPatchCheckFill className='text-blue-500 text-[1rem]'/>
                 </span>
             </ul>
-            <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+            <Link to="https://github.com/robin-dc" target="_blank">© 2023 Develop by <span className='hover:underline'>Robin Dela Cruz</span>.</Link>
         </div>
     </footer>
   )

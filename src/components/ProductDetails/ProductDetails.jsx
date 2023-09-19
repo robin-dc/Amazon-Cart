@@ -3,7 +3,7 @@ import { IoMdCart, IoMdAdd } from 'react-icons/io';
 import { AiFillStar } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, remove } from '../../features/cart/cartSlice';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { TbTruckDelivery } from 'react-icons/tb'
 import { LuRotate3D } from 'react-icons/lu'
 import ProductSlider from '../ProductSlider/ProductSlider';
@@ -11,6 +11,10 @@ import { fetchData } from '../../features/products/productsSlice';
 
 const ProductDetails = () => {
     const { id } = useParams()
+    const { pathname } = useLocation();
+    const path = pathname.split('/')[1]
+
+
     const dispatch = useDispatch()
     const state = useSelector(state => state.productDetails)
     const products = useSelector(state => state.products)
@@ -53,8 +57,8 @@ const ProductDetails = () => {
             </header>
             <div className='container p-[1rem] py-[2rem] lg:p-[2rem]'>
                 <div className='mb-[3rem] text-gray-400 text-[0.9rem] lg:text-[1rem]'>
-                    <Link to="/products">
-                        Products &nbsp;
+                    <Link to={`/${path}`}>
+                        {path[0].toUpperCase() + path.slice(1)} &nbsp;
                     </Link>
                     <span className='text-[#232f3e]'>/ Details</span>
                 </div>
